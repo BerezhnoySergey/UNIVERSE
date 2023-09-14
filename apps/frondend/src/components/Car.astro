@@ -1,0 +1,17 @@
+---
+const { brand, model, description, imageUrl, productionStart, productionEnd } =
+  Astro.props;
+---
+
+<div class="container mx-auto px-48 text-center text-yellow-400">
+  <div class="m-24">
+    <div class="mt-8">
+      <div class="text-3xl font-bold">{brand} - {model}</div>
+      <div class="text-2xl">
+        ({productionStart} - {productionEnd ?? '...'})
+      </div>
+      <img src={imageUrl} alt="image" class="mx-auto my-10 rounded-2xl" />
+      <div class="text-xl">{description}</div>
+    </div>
+  </div>
+</div>

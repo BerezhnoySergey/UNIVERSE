@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Car from '../components/Car.astro';
+import fetchApi from '../lib/strapi';
+import type ICar from '../interfaces/car';
+
+const cars = await fetchApi<ICar[]>({
+  endpoint: 'cars',
+  wrappedByKey: 'data',
+});
+
+console.log(cars);
+---
+
+<Layout title="UNIVERSE">
+  <main>
+    <div>
+      {cars.map((car: ICar) => <Car {...car.attributes} />)}
+    </div>
+  </main>
+</Layout>

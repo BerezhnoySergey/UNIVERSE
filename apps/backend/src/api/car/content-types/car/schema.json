@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brand": {
+      "type": "enumeration",
+      "enum": [
+        "BMW",
+        "Mercedes-Benz",
+        "Audi",
+        "Toyota",
+        "Tesla"
+      ],
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    },
+    "productionStart": {
+      "type": "date",
+      "required": true
+    },
+    "productionEnd": {
+      "type": "date"
+    },
+    "imageUrl": {
+      "type": "string",
+      "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+      "required": true,
+      "unique": true
+    }
+  }
+}
